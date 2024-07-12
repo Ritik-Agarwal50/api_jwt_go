@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/driver/mysql"
-	"github.com/joho/gotdotenv"
+	"github.com/joho/godotenv"
+	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
 var GlobalDB *gorm.DB
 
 func InitDatabase() (err error) {
-	config, err := gotdotenv.Read()
+	config, err := godotenv.Read()
 	if err != nil {
 		log.Fatal(err)
 	}
